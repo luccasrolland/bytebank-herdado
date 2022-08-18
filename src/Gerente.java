@@ -1,10 +1,8 @@
 //"""Class derived from the mother class."""
 
-public class Gerente extends Funcionario {
-	
-	private int senha;
+public class Gerente extends Funcionario implements Autenticavel {
 
-//"""Specific attribute."""
+	private int senha;
 
 	public double getBonificacao() {
 		System.out.println("Chamando o metodo de bonificacao do GERENTE");
@@ -12,20 +10,20 @@ public class Gerente extends Funcionario {
 		//""Specific bonus method."""
 	}
 
+
+	@Override
 	public void setSenha(int senha) {
 		this.senha = senha;
-
-//"""Specific method where only Manager has a password."""
 	}
+	//"""Retorna metodo concreto de senha pela interface.""""
 
+	@Override
 	public boolean autentica(int senha) {
-		if(this.senha == senha){
+		if(this.senha == senha) {
 			return true;
 		} else {
 			return false;
 		}
-
-//"""Method that checks password authenticity."""
 	}
-
+	//"""Retorna metodo concreto de autenticacao pela interface."""
 }
