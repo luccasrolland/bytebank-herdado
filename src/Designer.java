@@ -1,8 +1,8 @@
 //"""Class derived from the mother class."""
-public class Designer extends Funcionario {
+public class Designer extends Employee {
 	
-	public double getBonificacao() {
-		System.out.println("Chamando o metodo de bonificacao do Designer");
+	public double getBonus() {
+		System.out.println("Calling designer bonus method");
 		return 200;
 		//""Specific bonus method."""
 	}	
