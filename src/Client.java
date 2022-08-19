@@ -2,24 +2,25 @@
 
 public class Client implements Authenticable {
 
-    private int password;
+    private UsefulAuthentication authenticator;
+
+    public  Client (){
+        this.authenticator = new UsefulAuthentication();
+    }
 
     @Override
     public void setPassword(int password) {
-        this.password = password;
+        this.authenticator.setPassword(password);
     }
     //"""Returns concrete password method via interface.""""
 
     @Override
     public boolean authenticate(int password) {
-        if(this.password == password) {
-            return true;
-        } else {
-            return false;
-        }
+        return this.authenticator.authenticate(password);
     }
-    //"""Returns concrete method of authentication by the interface."""
 }
+    //"""Returns concrete method of authentication by the interface."""
+
 
 
 
